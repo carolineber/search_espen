@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "database": "${workspaceFolder:search_espen}/data/local.db",
+            "name": "local"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

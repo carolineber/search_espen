@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot RAG</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page section">
+      <section class="panel container">
+        <header class="hero-block">
+          <div class="hero-kicker">Base ESPEN</div>
+          <h1 class="title is-1">ESPEN - AI</h1>
+          <p class="subtitle is-5">
+            IA treinada com contexto e base de dados da Escola Nacional de Serviços Penais (ESPEN)
+          </p>
+        </header>
+
+        <section class="quick-questions" aria-label="Perguntas prontas">
+          <div class="quick-questions-list">
+            <button type="button" class="quick-question-btn" data-question="Preciso fazer um curso sobre inteligência penitenciária">
+              Preciso fazer um curso sobre inteligência penitenciária
+            </button>
+            <button type="button" class="quick-question-btn" data-question="Quais ações educativas envolvem gestão?">
+              Quais ações educativas envolvem gestão?
+            </button>
+            <button type="button" class="quick-question-btn" data-question="Quais trilhas falam sobre saúde mental?">
+              Quais trilhas falam sobre saúde mental?
+            </button>
+            <button type="button" class="quick-question-btn" data-question="Preciso de uma trilha sobre instrutoria e didática">
+              Preciso de uma trilha sobre instrutoria e didática
+            </button>
+            <button type="button" class="quick-question-btn" data-question="Quais cursos são indicados para atendimento pré-hospitalar?">
+              Quais cursos são indicados para atendimento pré-hospitalar?
+            </button>
+          </div>
+        </section>
+
+        <div id="chat" class="chat"></div>
+
+        <form id="chat-form" class="chat-form">
+          <div class="field">
+            <div class="control">
+              <textarea
+                id="question"
+                class="textarea"
+                rows="3"
+                placeholder="Pergunte qualquer coisa sobre a Base ESPEN..."
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="composer-footer">
+            <div class="composer-meta">
+              <span class="model-badge">Base ESPEN</span>
+              <label class="provider-label" for="provider">LLM</label>
+              <div class="select provider-shell">
+                <select id="provider" class="provider-select" aria-label="Escolher provedor de LLM">
+                  <option value="openai">OpenAI · gpt-4.1-mini</option>
+                  <option value="groq">Groq · qwen/qwen3-32b</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="button send-btn">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
